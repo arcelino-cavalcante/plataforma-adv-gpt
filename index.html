@@ -1884,12 +1884,11 @@
             atalhosContainer.innerHTML = '';
             const snapshot = await db.collection('atalhos').get();
             if (!snapshot.empty) {
-                let html = '<div class="atalhos-bar"><h3>Atalhos Rápidos:</h3>';
+                let html = '<h3>Atalhos Rápidos:</h3>';
                 snapshot.forEach(doc => {
                     const atalho = doc.data();
                     html += `<a href="${atalho.link}" target="_blank" class="btn">${atalho.nome}</a>`;
                 });
-                html += '</div>';
                 atalhosContainer.innerHTML = html;
             }
         }
